@@ -1,0 +1,38 @@
+.catalog:
+  name: "iMock"
+  version: "v0.0.10"
+  description: "Virtual Service for soap and rest"
+  uuid: imock-0
+  minimum_rancher_version: v0.6.0
+  questions:
+    - variable: DEKKA_APP_PORT
+      description: "public port to access imock-server"
+      label: "Public Port"
+      required: true
+      default: "8080"
+      type: "int"
+    - variable: DEKKA_DEBUG_PORT
+      description: "public port to debug"
+      label: "Public Port"
+      required: true
+      default: "8081"
+      type: "int"
+    - variable: DEKKA_REDIS_CMD__PORT
+      description: "public port to access redis commander"
+      label: "Public Port"
+      required: true
+      default: "8091"
+      type: "int"
+    - variable: "DEKKA_VOLUME_NAME"
+      description: "Name to give the node application volume"
+      label: "Volume Name"
+      required: true
+      default: "/opt/dekka/imock/server"
+      type: "string"
+    - variable: "DEKKA_FORCE"
+      label: "Force install"
+      description: "To be use if you want reinit"
+      required: false
+      default: false
+      type: "boolean"      
+imock:

@@ -1,0 +1,32 @@
+.catalog:
+  name: "express"
+  version: "v0.0.4"
+  description: "Server node"
+  uuid: node-0
+  minimum_rancher_version: v0.6.0
+  questions:
+    - variable: DEKKA_APP_PORT
+      description: "public port to access server"
+      label: "Public Port"
+      required: true
+      default: "8090"
+      type: "int"
+    - variable: DEKKA_DEBUG_PORT
+      description: "public port to debug"
+      label: "Public Port"
+      required: true
+      default: "8091"
+      type: "int"
+    - variable: "DEKKA_VOLUME_NAME"
+      description: "Name to give the node application volume"
+      label: "Volume Name"
+      required: true
+      default: "/opt/dekka/node/app"
+      type: "string"
+    - variable: "DEKKA_FORCE"
+      label: "Force install"
+      description: "To be use if you want reinit"
+      required: false
+      default: false
+      type: "boolean"
+express:
