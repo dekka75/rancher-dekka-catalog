@@ -7,7 +7,19 @@ node:
     - /opt/dekka/imock/server:/opt/node
   ports:
     - 8080:3000/tcp
-    - 8081:5858/tcp
+    - 8090:5858/tcp
+  links:
+    - redis
+
+gui:
+  image: 'dekka/node:latest'
+  environment:
+    DEKKA_APP_NAME: imock-gui
+  volumes:
+    - /opt/dekka/imock/gui:/opt/node
+  ports:
+    - 8081:3000/tcp
+    - 8091:5858/tcp
   links:
     - redis
 
