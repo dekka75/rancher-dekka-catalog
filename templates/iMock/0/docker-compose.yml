@@ -3,11 +3,10 @@ node:
   image: 'dekka/node:latest'
   environment:
     DEKKA_APP_NAME: imock-server
-    DEKKA_VOLUME_NAME: /opt/dekka/imock/server
   volumes:
-    - /opt/dekka/imock/server:/opt/node
+    - ${DEKKA_SERVEUR_VOLUME_NAME}:/opt/node
   ports:
-    - 8080:3000/tcp
+    - ${DEKKA_SERVEUR_PORT}:3000/tcp
     - 8090:5858/tcp
   links:
     - redis
@@ -16,11 +15,10 @@ gui:
   image: 'dekka/node:latest'
   environment:
     DEKKA_APP_NAME: imock-gui
-    DEKKA_VOLUME_NAME: /opt/dekka/imock/gui
   volumes:
-    - /opt/dekka/imock/gui:/opt/node
+    - ${DEKKA_GUI_VOLUME_NAME}:/opt/node
   ports:
-    - 8081:3000/tcp
+    - ${DEKKA_GUI_PORT}:3000/tcp
     - 8091:5858/tcp
   links:
     - redis
@@ -29,7 +27,7 @@ redis-commander:
   image: 'dekka/redis-commander:latest'
   command: --redis-host redis
   ports:
-    - 8082:8081/tcp  
+    - ${DEKKA_REDIS_CMD__PORT}:8081/tcp  
   links:
     - redis
 
