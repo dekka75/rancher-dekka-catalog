@@ -7,7 +7,7 @@ server:
     - ${DEKKA_SERVEUR_VOLUME_NAME}:/opt/node
   ports:
     - ${DEKKA_SERVEUR_PORT}:3000/tcp
-    - 8090:5858/tcp
+    - 8058:5858/tcp
   links:
     - redis
 
@@ -19,7 +19,7 @@ gui:
     - ${DEKKA_GUI_VOLUME_NAME}:/opt/node
   ports:
     - ${DEKKA_GUI_PORT}:3000/tcp
-    - 8091:5858/tcp
+    - 8059:5858/tcp
   links:
     - redis
 
