@@ -1,6 +1,6 @@
 .catalog:
   name: "iMock"
-  version: "v0.0.12"
+  version: "v0.0.13"
   description: "Virtual Service for soap and rest"
   uuid: imock-0
   minimum_rancher_version: v0.6.0
