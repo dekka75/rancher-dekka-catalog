@@ -1,5 +1,5 @@
 # DESCRIPTION: intelligent server mock
-node:
+server:
   image: 'dekka/node:latest'
   environment:
     DEKKA_APP_NAME: imock-server
